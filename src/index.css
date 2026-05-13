@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Base reset extensions --- */
+:root {
+  color-scheme: dark;
+  /* Smooth scroll for in-page anchor links */
+  scroll-behavior: smooth;
+}
+
+html, body, #root {
+  background-color: theme("colors.bg.base");
+  color: theme("colors.ink.primary");
+  min-height: 100%;
+  font-family: theme("fontFamily.sans");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Typography defaults --- */
+body {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: theme("colors.ink.secondary");
+}
+
+h1, h2, h3, h4 {
+  font-family: theme("fontFamily.serif");
+  color: theme("colors.ink.primary");
+  font-feature-settings: "ss01" on, "ss02" on;   /* Fraunces stylistic sets */
+}
+
+/* --- Selection color --- */
+::selection {
+  background: theme("colors.accent.DEFAULT");
+  color: theme("colors.bg.base");
+}
+
+/* --- Custom scrollbar (Webkit) --- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: theme("colors.bg.base");
+}
+::-webkit-scrollbar-thumb {
+  background: theme("colors.bg.subtle");
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: theme("colors.ink.tertiary");
+}
+
+/* --- Reduced motion respect --- */
+/* Critical for accessibility  - users who've set prefers-reduced-motion in
+   their OS shouldn't get hit with our bold animations. Framer Motion has
+   its own respect for this, but we cover CSS animations too. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* --- Utility: text-balance for headings --- */
+/* Newer browsers can word-wrap headings beautifully */
+.text-balance {
+  text-wrap: balance;
+}
