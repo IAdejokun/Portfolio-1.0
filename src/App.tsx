@@ -2,6 +2,9 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { Layout } from "./components/layout/Layout";
+import { ScrollToTop } from "./components/ScrollToTop";
+
+
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ProjectPage = lazy(() => import("./pages/ProjectPage"));
@@ -38,6 +41,7 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <AnimatedRoutes />
     </BrowserRouter>
   );
