@@ -6,7 +6,7 @@
 // CV file ID from Google Drive — extracted once, used in two URL forms below.
 // To update the CV: replace the file in Drive (keep same file ID), or upload
 // a new version and update this constant.
-const CV_FILE_ID = "1fAlvHFjLVvCOHiLjQOsJZXT4WkccoiVp";
+const CV_FILE_ID = "1SUTWKHtETV-Z-qUVrNEJWsAs7LVZIxgY";
 
 export const BIO = {
   name: "Adejokun Ibukunoluwa",
