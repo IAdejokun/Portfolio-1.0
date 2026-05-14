@@ -50,7 +50,7 @@ export const PROJECTS: Project[] = [
     links: [
       {
         label: "Try it live",
-        href: "https://smartcart-frontend.vercel.app",
+        href: "https://smartcart-ibk.vercel.app",
         primary: true,
       },
       {
